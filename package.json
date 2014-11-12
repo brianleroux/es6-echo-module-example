@@ -1,0 +1,22 @@
+{
+  "name": "es6-module-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/echo.js",
+  "scripts": {
+    "preinstall":"mkdir -p dist www",
+    "compile": "traceur --dir src dist --modules=commonjs",
+    "test": "npm run compile && node test/test-echo | tap-spec",
+    "www": "browserify test/test-browserified > www/index.js"
+  },
+  "author": "Brian LeRoux <b@brian.io>",
+  "license": "Apache2",
+  "devDependencies": {
+    "browserify": "^6.3.2",
+    "tap-spec": "^1.0.1",
+    "tape": "^3.0.3",
+    "traceur": "0.0.74"
+  },
+  "dependencies": {
+  }
+}
