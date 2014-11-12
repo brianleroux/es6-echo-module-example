@@ -7,7 +7,7 @@
     "preinstall":"mkdir -p dist www",
     "compile": "traceur --dir src dist --modules=commonjs",
     "test": "npm run compile && node test/test-echo | tap-spec",
-    "www": "browserify test/test-browserified > www/index.js"
+    "www": "cp src/index.html www/index.html && browserify test/test-browserified > www/index.js"
   },
   "author": "Brian LeRoux <b@brian.io>",
   "license": "Apache2",
